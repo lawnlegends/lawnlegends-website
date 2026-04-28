@@ -3,67 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lawn Legends</title>
+    <title>Lawn Legends | Professional Lawn Care</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f6f9f6;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
         header {
-            background-color: #1f7a3a;
+            background: linear-gradient(135deg, #2d5016 0%, #1f7a3a 100%);
             color: white;
-            padding: 10px 0;
+            padding: 60px 20px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #fff;
+            color: #1f7a3a;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .phone-section {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .phone-section a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
+        
+        h2 {
+            color: #1f7a3a;
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #1f7a3a;
+            border-radius: 2px;
+        }
+        
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
         }
-        footer {
-            background-color: #1f7a3a;
-            color: white;
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
             text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
+            border-top: 5px solid #1f7a3a;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(31, 122, 58, 0.2);
+        }
+        
+        .service-card h3 {
+            color: #1f7a3a;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .testimonials {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8f5e9 100%);
+            padding: 60px 20px;
+            margin: 60px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-left: 4px solid #1f7a3a;
+        }
+        
+        .testimonial-card p {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-card .author {
+            color: #1f7a3a;
+            font-weight: bold;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #2d5016 0%, #1f7a3a 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .contact-section h2 {
+            color: white;
+        }
+        
+        .contact-section h2:after {
+            background: white;
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+            font-size: 1.2em;
+        }
+        
+        .contact-info p {
+            margin: 15px 0;
+        }
+        
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .map-container iframe {
             width: 100%;
+            height: 400px;
+            border: none;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            color: #999;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            margin: 10px 0;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            header p {
+                font-size: 1em;
+            }
+            
+            h2 {
+                font-size: 1.8em;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Lawn Legends</h1>
-        <p>Phone: 615-504-0531</p>
-    </header>
-    <div class="container">
-        <h2>Our Services</h2>
-        <div class="services">
-            <div>Service 1</div>
-            <div>Service 2</div>
-            <div>Service 3</div>
-            <div>Service 4</div>
-            <div>Service 5</div>
+
+<header>
+    <h1>🌱 Lawn Legends</h1>
+    <p>Premium Lawn Care • Reliable • Clean Results</p>
+    <a href="#booking" class="cta-button">Book Your Service Now</a>
+    <div class="phone-section">
+        <p>Call or Text: <a href="tel:+16155040531">(615) 504-0531</a></p>
+    </div>
+</header>
+
+<div class="container">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="service-card">
+            <h3>✂️ Lawn Mowing & Edging</h3>
+            <p>Professional lawn mowing with precision edging to keep your yard looking sharp and well-maintained.</p>
         </div>
-        <h2>Service Areas</h2>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345099794!2d144.95373631507024!3d-37.81627997975162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f128c79%3A0xe00b0830148adf0b!2sMelbourne%20CBD%2C%20Melbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1633670989903!5m2!1sen!2sus"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        <h2>Book an Appointment</h2>
-        <div>
-            <!-- Calendly Widget Placeholder -->
-            <p>Calendly booking widget will be embedded here.</p>
+        <div class="service-card">
+            <h3>🌿 Weed Removal</h3>
+            <p>Complete weed removal services to keep your lawn pristine and healthy all season long.</p>
+        </div>
+        <div class="service-card">
+            <h3>✂️ Hedge Trimming</h3>
+            <p>Expert hedge and shrub trimming to enhance your landscape's appearance and health.</p>
+        </div>
+        <div class="service-card">
+            <h3>🧹 Yard Cleanups</h3>
+            <p>Comprehensive yard cleanup services including debris removal and seasonal maintenance.</p>
+        </div>
+        <div class="service-card">
+            <h3>🌳 Basic Landscaping</h3>
+            <p>Transform your outdoor space with our basic landscaping design and installation services.</p>
+        </div>
+        <div class="service-card">
+            <h3>⭐ Full Service Packages</h3>
+            <p>Complete lawn care packages tailored to your specific needs and budget requirements.</p>
         </div>
     </div>
-    <footer>
-        <p>© 2026 Lawn Legends. All Rights Reserved.</p>
-    </footer>
+</div>
+
+<div class="container">
+    <h2>Service Areas</h2>
+    <p style="text-align: center; color: #666; font-size: 1.1em; margin-bottom: 30px;">
+        Robertson • Sumner • Davidson • Cheatham County
+    </p>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps?q=Springfield,TN&output=embed"></iframe>
+    </div>
+</div>
+
+<div class="testimonials">
+    <div class="container">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"Lawn Legends completely transformed my backyard! The team is professional, reliable, and always on time."</p>
+                <p class="author">— Sarah Johnson</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"Amazing service and attention to detail. My lawn has never looked better. Highly recommended!"</p>
+                <p class="author">— Michael Davis</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"Finally found a lawn care service I can trust. They're responsive, professional, and fairly priced."</p>
+                <p class="author">— Jennifer Martinez</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contact-section" id="booking">
+    <div class="container">
+        <h2>Ready to Transform Your Lawn?</h2>
+        <div class="contact-info">
+            <p>Contact us today to schedule your service</p>
+            <p><a href="tel:+16155040531">📞 Call or Text: (615) 504-0531</a></p>
+            <p>Weekly Service Starting at $45</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Lawn Legends • Professional Lawn Care Services</p>
+    <p>Serving Robertson, Sumner, Davidson & Cheatham County</p>
+</footer>
+
 </body>
 </html>
